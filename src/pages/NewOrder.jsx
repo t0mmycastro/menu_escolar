@@ -19,19 +19,54 @@ const NewOrder = () => {
 
     const navigate = useNavigate();
 
+    const isValidate = () => {
+      let isProceded = true;
+    let errormessage = 'Por favor, ingresa los siguientes datos: '
+    if(mvegan===null || mvegan==='') {
+      isProceded=false;
+      errormessage += ' M. Vegan,';
+    }
+    if(mceliac===null || mceliac==='') {
+      isProceded=false;
+      errormessage += ' M. Celiac,';
+    }
+    if(mestan===null || mestan==='') {
+      isProceded=false;
+      errormessage += ' M. Estan,';
+    }
+    if(mautoc===null || mautoc==='') {
+      isProceded=false;
+      errormessage += ' M. Autoc';
+    }
+    if(mcaloric===null || mcaloric==='') {
+      isProceded=false;
+      errormessage += ' M. Caloric';
+    }
+    if(date===null || date==='') {
+      isProceded=false;
+      errormessage += ' Fecha';
+    }
+    if(!isProceded) {
+      alert(errormessage)
+    }
+
+    return isProceded
+    }
+ 
     const handleSubmit = e => {
       e.preventDefault();
       const orderForm={mvegan,mceliac,mestan,mautoc,mcaloric,date}
 
       //console.log({mvegan,mceliac,mestan,mautoc,mcaloric,date})
-      axios.post("http://localhost:8000/orders", orderForm)
-      .then((res) => {
-        alert('Su pedido fue registrado')
-        navigate('/orders')
-      }).catch((err) => {
-        console.log(err.message)
-      })
-      
+      if(isValidate()) {
+        axios.post("http://localhost:8000/orders", orderForm)
+        .then((res) => {
+          alert('Su pedido fue registrado')
+          navigate('/orders')
+        }).catch((err) => {
+          console.log(err.message)
+        })
+      }   
     }
 
   return <Helmet title='New Order'>
@@ -53,7 +88,7 @@ const NewOrder = () => {
                 <input value={mceliac} onChange={e=> mceliacChange(e.target.value)} type='text' placeholder='M. Celiacos' size='35'/>
               </FormGroup>
               <FormGroup className='form__group'>
-                <input value={mestan} onChange={e=> mestanChange(e.target.value)} type='text' placeholder='M. Estandar' size='35'/>
+                <input required value={mestan} onChange={e=> mestanChange(e.target.value)} type='text' placeholder='M. Estandar' size='35'/>
               </FormGroup>
               <FormGroup className='form__group'>
                 <input value={mautoc} onChange={e=> mautocChange(e.target.value)} type='text' placeholder='M. Autóctono' size='35'/>

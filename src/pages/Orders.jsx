@@ -3,12 +3,13 @@ import Helmet from '../components/Helmet/Helmet'
 import CommonSection from '../components/UI/CommonSection'
 import { Container, Row, Col } from 'reactstrap'
 import '../styles/orders.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const Orders = () => {
 
   const[orderData, orderDataChange] = useState(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
     axios("http://localhost:8000/orders/")
@@ -24,6 +25,13 @@ const Orders = () => {
 
   }, [])
   
+  const loadDetail = (orderid) => {
+    navigate("/orders/detail/"+orderid)
+  }
+
+  const loadRectificar = (orderid) => {
+    navigate("/orders/update/"+orderid)
+  }
 
   return <Helmet title='Menu de ordenes'>
     <CommonSection title='Menu de ordenes'/>
@@ -65,8 +73,8 @@ const Orders = () => {
                     <td>{item.mautoc}</td>
                     <td>{item.mcaloric}</td>
                     <td>
-                    <button className='btn__rectificar'>Rectificar</button>
-                    <button className='btn__detalle'>Ver detalle</button>
+                    <button onClick={() => {loadRectificar(item.id)}} className='btn__rectificar'>Rectificar</button>
+                    <button onClick={() => {loadDetail(item.id)}} className='btn__detalle'>Ver detalle</button>
                     </td>
                   </tr>
                 ))
