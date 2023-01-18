@@ -1,0 +1,29 @@
+
+.footer {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    background: var(--hero-bg);
+}
+
+.footer__text {
+    line-height: 30px;
+    color: rgb(156, 147, 147);
+}
+
+.footer__quick-links ul li {
+    background: transparent !important;
+}
+
+.footer__quick-links ul li a {
+    color: rgb(156, 147, 147);
+}
+
+.quick__links-title {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.footer__copyright{
+    color: rgb(156, 147, 147);
+    font-size: .9rem;
+}

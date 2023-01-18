@@ -1,0 +1,51 @@
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn__logout button {
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+     background: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.btn__pedidos button {
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+     background: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+td button {
+    border: none;
+    outline: none;
+    padding: 8px 8px;
+    border-radius: 5px;
+     background: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn__rectificar {
+    padding: 5px;
+    margin: 5px;
+    background: lightgreen;
+}
+
+.btn__detalle {
+    padding: 5px;
+    background: lightsalmon;
+}
