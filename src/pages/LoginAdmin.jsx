@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Container, Row, Col, Form, FormGroup } from 'reactstrap'
 import Helmet from '../components/Helmet/Helmet'
 import CommonSection from '../components/UI/CommonSection'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import '../styles/login.css'
 import axios from 'axios'
 
@@ -13,6 +13,7 @@ const LoginAdmin = () => {
 
   const userNavigate = useNavigate()
 
+  // Petición API ADMIN
   const proceedLogin = (e) => {
     e.preventDefault();
     if (validate()) {
@@ -38,6 +39,7 @@ const LoginAdmin = () => {
     }
   }
 
+  // Validación
   const validate = () => {
     let result = true;
     if(username === '' || username === null) {

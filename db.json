@@ -1,9 +1,119 @@
 {
   "user": [
-    
+    {
+      "id": "Usuario 1",
+      "name": "Tomas",
+      "email": "ttom@ttom.com",
+      "password": "tom123"
+    },
+    {
+      "id": "Usuario 2",
+      "name": "Juan",
+      "email": "ttam@ttam.com",
+      "password": "asd123"
+    },
+    {
+      "id": "Usuario 3",
+      "name": "Maxi",
+      "email": "maxi@maxi.com",
+      "password": "naxi123"
+    },
+    {
+      "id": "Usuario 4",
+      "name": "Julian",
+      "email": "julian@julian.com",
+      "password": "julian123"
+    },
+    {
+      "id": "Usuario 5",
+      "name": "Pedro",
+      "email": "pedro@pedro.com",
+      "password": "pedro123"
+    },
+    {
+      "id": "Usuario 6",
+      "name": "Mariano",
+      "email": "mariano@mariano.com",
+      "password": "mariano123"
+    },
+    {
+      "id": "Usuario 7",
+      "name": "Iara",
+      "email": "iara@iara.com",
+      "password": "iara123"
+    }
   ],
   "orders": [
-    
+    {
+      "liceo": "EPET20",
+      "mvegan": "10",
+      "mceliac": "20",
+      "mestan": "30",
+      "mautoc": "40",
+      "mcaloric": "50",
+      "date": "2023-01-10",
+      "id": 1
+    },
+    {
+      "liceo": "Don Bosco",
+      "mvegan": "22",
+      "mceliac": "12",
+      "mestan": "34",
+      "mautoc": "31",
+      "mcaloric": "67",
+      "date": "2023-01-21",
+      "id": 2
+    },
+    {
+      "liceo": "EPET 3",
+      "mvegan": "23",
+      "mceliac": "41",
+      "mestan": "12",
+      "mautoc": "8",
+      "mcaloric": "23",
+      "date": "2023-01-23",
+      "id": 3
+    },
+    {
+      "liceo": "EPET 3",
+      "mvegan": "4",
+      "mceliac": "6",
+      "mestan": "9",
+      "mautoc": "1",
+      "mcaloric": "12",
+      "date": "2023-01-23",
+      "id": 4
+    },
+    {
+      "liceo": "EPET 32",
+      "mvegan": "2",
+      "mceliac": "15",
+      "mestan": "13",
+      "mautoc": "12",
+      "mcaloric": "6",
+      "date": "2023-01-29",
+      "id": 5
+    },
+    {
+      "liceo": "EPET412",
+      "mvegan": "12",
+      "mceliac": "33",
+      "mestan": "49",
+      "mautoc": "4",
+      "mcaloric": "12",
+      "date": "2023-01-24",
+      "id": 6
+    },
+    {
+      "liceo": "EPET 424",
+      "mvegan": "23",
+      "mceliac": "1",
+      "mestan": "4",
+      "mautoc": "78",
+      "mcaloric": "23",
+      "date": "2022-11-16",
+      "id": 7
+    }
   ],
   "administradores": [
     {

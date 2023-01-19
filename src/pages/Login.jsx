@@ -13,6 +13,7 @@ const Login = () => {
 
   const userNavigate = useNavigate()
 
+  // Petición a la API
   const proceedLogin = (e) => {
     e.preventDefault();
     if (validate()) {
@@ -38,6 +39,7 @@ const Login = () => {
     }
   }
 
+  // Validación del Login
   const validate = () => {
     let result = true;
     if(username === '' || username === null) {
