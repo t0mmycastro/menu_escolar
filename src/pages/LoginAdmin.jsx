@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import '../styles/login.css'
 import axios from 'axios'
 
-const Login = () => {
+const LoginAdmin = () => {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -17,7 +17,7 @@ const Login = () => {
     e.preventDefault();
     if (validate()) {
       //console.log('proceed')
-      axios.get("http://localhost:8000/user/"+username)
+      axios.get("http://localhost:8000/administradores/"+username)
       .then((res) => {
         return res.data;
       }).then((resp) => {
@@ -26,7 +26,7 @@ const Login = () => {
           alert('Por favor, ingresa un usuario válido')
         } else {
           if(resp.password===password){
-            userNavigate('/orders')
+            userNavigate('/orders/admin/')
             alert('Te logueaste con éxito')
           } else {
             alert('Porfavor ingresa unas credenciales válidas')
@@ -52,7 +52,7 @@ const Login = () => {
   }
 
   return <Helmet title='Login'>
-    <CommonSection title='Login'/>
+    <CommonSection title='Login administradores'/>
     <section>
       <Container>
         <Row>
@@ -67,7 +67,6 @@ const Login = () => {
               </FormGroup>
 
               <button type='submit' className='login__btn'>Login</button>
-              <p>¿No tienes cuenta? <Link to="/signup">¡registrate!</Link></p>
             </Form>
           </Col>
         </Row>
@@ -76,4 +75,4 @@ const Login = () => {
   </Helmet>
 }
 
-export default Login
+export default LoginAdmin

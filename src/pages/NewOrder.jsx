@@ -10,6 +10,7 @@ const NewOrder = () => {
 
     
     const [id, idChange] = useState("");
+    const [liceo, liceoChange] = useState("");
     const [mvegan, mveganChange] = useState("");
     const [mceliac, mceliacChange] = useState("");
     const [mestan, mestanChange] = useState("");
@@ -23,6 +24,10 @@ const NewOrder = () => {
       let isProceded = true;
     let errormessage = 'Por favor, ingresa los siguientes datos: '
     if(mvegan===null || mvegan==='') {
+      isProceded=false;
+      errormessage += ' M. Vegan,';
+    }
+    if(liceo===null || liceo==='') {
       isProceded=false;
       errormessage += ' M. Vegan,';
     }
@@ -55,7 +60,7 @@ const NewOrder = () => {
  
     const handleSubmit = e => {
       e.preventDefault();
-      const orderForm={mvegan,mceliac,mestan,mautoc,mcaloric,date}
+      const orderForm={liceo,mvegan,mceliac,mestan,mautoc,mcaloric,date}
 
       //console.log({mvegan,mceliac,mestan,mautoc,mcaloric,date})
       if(isValidate()) {
@@ -80,6 +85,9 @@ const NewOrder = () => {
             <Form className='order__form' onSubmit={handleSubmit}>
               <FormGroup className='form__group'>
                 <input value={id} disabled type='text' placeholder='ID' size='35'/>
+              </FormGroup>
+              <FormGroup className='form__group'>
+                <input value={liceo} onChange={e=> liceoChange(e.target.value)} type='text' placeholder='Ingresa el liceo' size='35'/>
               </FormGroup>
               <FormGroup className='form__group'>
                 <input value={mvegan} onChange={e=> mveganChange(e.target.value)} type='text' placeholder='M. Vegetarianos' size='35'/>

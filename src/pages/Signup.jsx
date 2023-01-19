@@ -74,7 +74,7 @@ const Signup = () => {
 
             <Form className='auth__form' onSubmit={handleSubmit}>
               <FormGroup className='form__group'>
-                <input value={id} onChange={e => idChange(e.target.value)} type='text' placeholder='Ingresa tu liceo' size='35'/>
+                <input value={id} onChange={e => idChange(e.target.value)} type='text' placeholder='Ingresa tu usuario' size='35'/>
               </FormGroup>
               <FormGroup className='form__group'>
                 <input value={name} onChange={e => nameChange(e.target.value)} type='text' placeholder='Ingresa tu nombre' size='35'/>
