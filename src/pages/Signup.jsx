@@ -74,19 +74,19 @@ const Signup = () => {
 
             <Form className='auth__form' onSubmit={handleSubmit}>
               <FormGroup className='form__group'>
-                <input value={id} onChange={e => idChange(e.target.value)} type='text' placeholder='Ingresa tu usuario' size='35'/>
+                <input value={id} onChange={e => idChange(e.target.value)} type='text' placeholder='Ingresa tu usuario: ' size='35'/>
               </FormGroup>
               <FormGroup className='form__group'>
-                <input value={name} onChange={e => nameChange(e.target.value)} type='text' placeholder='Ingresa tu nombre' size='35'/>
+                <input value={name} onChange={e => nameChange(e.target.value)} type='text' placeholder='Ingresa tu nombre: ' size='35'/>
               </FormGroup>
               <FormGroup className='form__group'>
-                <input value={email} onChange={e => emailChange(e.target.value)} type='email' placeholder='Ingresa tu email' size='35'/>
+                <input value={email} onChange={e => emailChange(e.target.value)} type='email' placeholder='Ingresa tu email:  ' size='35'/>
               </FormGroup>
               <FormGroup className='form__group'>
                 <input value={password} onChange={e => passwordChange(e.target.value)} type='password' placeholder='Ingresa tu contraseña' size='35'/>
               </FormGroup>
 
-              <button type='submit' className='login__btn'>Crear una cuenta</button>
+              <button type='submit' value='Submit' className='login__btn'>Crear una cuenta</button>
               <p>¿Ya tienes una cuenta? <Link to="/login">¡logueate!</Link></p>
             </Form>
           </Col>
