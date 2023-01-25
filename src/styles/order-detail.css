@@ -18,3 +18,21 @@
     font-size: 1rem;
     margin-top: 40px;
 }
+
+.qr__btn {
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 40px;
+    margin-left: 10px
+}
+
+.qrcode__img {
+    width: 150px;
+    align-items: center;
+}

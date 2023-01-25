@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container,Row,Col, ListGroup, ListGroupItem, List } from 'reactstrap'
+import { Container,Row,Col, ListGroup, ListGroupItem } from 'reactstrap'
 
 import '../Footer/footer.css'
 

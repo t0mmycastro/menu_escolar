@@ -6,12 +6,14 @@ import Helmet from '../components/Helmet/Helmet';
 import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 import '../styles/order-detail.css'
 import { Link } from 'react-router-dom';
+import QRCode from 'qrcode'
 
 const OrderDetail = () => {
 
     const{orderid}=useParams();
 
     const [orderData, orderDataChange] = useState({})
+    const [qrcode, setQrCode] = useState('')
 
     useEffect(() => {
         axios("http://localhost:8000/orders/"+orderid)
@@ -24,6 +26,25 @@ const OrderDetail = () => {
           console.log(err.message)
         })
     }, [])
+
+    let data = {
+        mvegan: orderData.mvegan,
+        mceliac: orderData.mceliac,
+        mestan: orderData.mestan,
+        mautoc: orderData.mautoc,
+        mcaloric: orderData.mcaloric,
+        date: orderData.date
+    }
+
+    let stJson = JSON.stringify(data)
+
+    const GenerateQRCode = () => {
+        QRCode.toDataURL(stJson, (err, stJson) => {
+            if (err) return console.error(err)
+
+            setQrCode(stJson)
+        })
+    }
     
 
   return <Helmet title='Detalle'>
@@ -52,9 +73,20 @@ const OrderDetail = () => {
                     <ListGroupItem className='ps-0 border-0'>
                         <p>Fecha del pedido: {orderData.date}</p>
                     </ListGroupItem>
+                    <ListGroupItem className='ps-0 border-0'>
+                    
+                    {qrcode && <div>
+                        <p>Código QR generado</p>
+                       <img src={qrcode} className='qrcode__img' />
+                    </div>}
+                    </ListGroupItem>
                 </ListGroup>
 
-                <button type='submit' className='volver__btn'><Link to='/orders'>Volver</Link></button>
+                <div className='btn__general'>
+                    <button type='submit' className='volver__btn'><Link to='/orders'>Volver</Link></button>
+                    <button onClick={GenerateQRCode} className='qr__btn'>Generar codigo QR</button>
+                    
+                </div>
                 </div>
             </Col>
         </Row>
